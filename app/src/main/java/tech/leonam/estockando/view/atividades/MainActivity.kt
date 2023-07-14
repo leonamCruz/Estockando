@@ -1,5 +1,6 @@
 package tech.leonam.estockando.view.atividades
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import tech.leonam.estockando.R
@@ -13,6 +14,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setarNome()
+        clickPesquisa()
+    }
+
+    private fun clickPesquisa() {
+        binding.cardPesquisa.setOnClickListener {
+            startActivity(Intent(this, Pesquisa::class.java))
+        }
     }
 
     private fun setarNome() {

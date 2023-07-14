@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/bemvindo"
         android:textColor="@color/branco"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/icone"
         android:layout_width="175sp"
         android:layout_height="175sp"
-        android:layout_marginTop="125sp"
+        android:layout_marginTop="100sp"
         android:importantForAccessibility="no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:layout_marginTop="32sp"
         android:textColor="@color/branco"
         android:textSize="15sp"
-        android:backgroundTint="@color/preto"
+        app:backgroundTint="@color/preto"
         />
 
     <EditText

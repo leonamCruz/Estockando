@@ -56,6 +56,7 @@ class BoasVindas : AppCompatActivity() {
                     putString("chave",salvar)
                 }.apply()
                 startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
         }
     }
