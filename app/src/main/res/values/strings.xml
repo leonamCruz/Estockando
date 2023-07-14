@@ -4,4 +4,6 @@
     <string name="qual_o_seu_nome">Qual é o seu nome?</string>
     <string name="iniciar">Iniciar</string>
     <string name="insira_seu_nome_por_favor">Insira seu nome, por favor!</string>
+    <string name="_0_produtos">0 Produtos</string>
+    <string name="r_00_00">R$00,00</string>
 </resources>

@@ -48,13 +48,13 @@
     <Button
         android:id="@+id/botaoComecar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50sp"
         android:text="@string/iniciar"
         app:layout_constraintTop_toBottomOf="@id/nomeInicial"
         app:layout_constraintEnd_toEndOf="@id/nomeInicial"
         android:layout_marginTop="32sp"
         android:textColor="@color/branco"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:backgroundTint="@color/preto"
         />
 
@@ -62,7 +62,7 @@
         android:background="@color/preto"
         android:id="@+id/nomeInicial"
         android:layout_width="match_parent"
-        android:layout_height="48sp"
+        android:layout_height="58sp"
         android:inputType="text"
         android:textColorHint="@color/branco"
         android:hint="@string/qual_o_seu_nome"

@@ -6,4 +6,119 @@
     android:layout_height="match_parent"
     tools:context=".view.atividades.MainActivity">
 
+    <View
+        android:id="@+id/retanguloSuperior"
+        android:layout_width="match_parent"
+        android:layout_height="1000sp"
+        android:layout_marginBottom="600sp"
+        android:background="@drawable/square"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="VisualLintBounds" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="175sp"
+        android:layout_marginBottom="32sp"
+        android:paddingHorizontal="32sp"
+        app:layout_constraintBottom_toBottomOf="@id/retanguloSuperior">
+        <LinearLayout
+            android:id="@+id/layoutDeProduto"
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <ImageView
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                app:srcCompat="@drawable/boxok"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_0_produtos"
+                android:textColor="@color/preto"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/layoutDeProduto"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:layout_gravity="center"
+                app:srcCompat = "@drawable/porco"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/r_00_00"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/preto"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/bolaVender"
+        android:layout_width="90sp"
+        android:layout_height="90sp"
+        android:layout_marginHorizontal="16sp"
+        android:layout_marginBottom="32sp"
+        android:background="@drawable/circulo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bolaCadastrar"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+    </View>
+
+    <ImageView
+        android:id="@+id/imageVender"
+        android:layout_width="65sp"
+        android:layout_height="65sp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/bolaVender"
+        app:layout_constraintEnd_toEndOf="@id/bolaVender"
+        app:layout_constraintStart_toStartOf="@id/bolaVender"
+        app:layout_constraintTop_toTopOf="@id/bolaVender"
+        app:srcCompat="@drawable/cart" />
+
+    <View
+        android:id="@+id/bolaCadastrar"
+        android:layout_width="90sp"
+        android:layout_height="90sp"
+        android:background="@drawable/circulo"
+        app:layout_constraintBottom_toBottomOf="@id/bolaVender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bolaVender"
+        app:layout_constraintTop_toTopOf="@+id/bolaVender" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="65sp"
+        android:layout_height="65sp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/bolaCadastrar"
+        app:layout_constraintEnd_toEndOf="@id/bolaCadastrar"
+        app:layout_constraintStart_toStartOf="@id/bolaCadastrar"
+        app:layout_constraintTop_toTopOf="@id/bolaCadastrar"
+        app:srcCompat="@drawable/boxadd" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
