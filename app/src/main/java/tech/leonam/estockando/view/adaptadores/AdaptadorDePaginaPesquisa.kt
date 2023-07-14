@@ -3,7 +3,6 @@ package tech.leonam.estockando.view.adaptadores
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import tech.leonam.estockando.databinding.ActivityPesquisaBinding
 import tech.leonam.estockando.view.fragmentos.PesquisaEstoque
 import tech.leonam.estockando.view.fragmentos.PesquisaVendas
 
