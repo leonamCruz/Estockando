@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/branco" />
     <corners
-        android:radius="50sp"
+        android:bottomLeftRadius="65sp"
+        android:bottomRightRadius="65sp"
         />
 
 

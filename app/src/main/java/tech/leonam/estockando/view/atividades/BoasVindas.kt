@@ -20,6 +20,7 @@ class BoasVindas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        binding = ActivityBoasVindasBinding.inflate(layoutInflater)
 
         if (sharedPreferences.getBoolean(KEY_FIRST_TIME, true)) {
             setContentView(binding.root)
@@ -62,8 +63,8 @@ class BoasVindas : AppCompatActivity() {
         val nome = name.trim().lowercase().toCharArray()
         nome[0] = nome[0].uppercaseChar()
 
-        for (i in 0..nome.size) {
-            if (nome[i].isWhitespace()) {
+        for (i in nome.indices) {
+            if (nome[i] == ' ') {
                 nome[i + 1] = name[i + 1].uppercaseChar()
             }
         }
