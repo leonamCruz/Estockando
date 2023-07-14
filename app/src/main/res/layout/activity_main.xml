@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.atividades.MainActivity">
 
+
     <View
         android:id="@+id/retanguloSuperior"
         android:layout_width="match_parent"
@@ -15,62 +16,117 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="VisualLintBounds" />
 
+    <ImageView
+        android:layout_width="48sp"
+        android:layout_height="48sp"
+        android:layout_margin="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/config" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eu"
+        android:textColor="@color/preto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/divisao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/divisao"
         android:layout_width="match_parent"
-        android:layout_height="175sp"
-        android:layout_marginBottom="32sp"
+        android:layout_height="130sp"
+        android:layout_marginBottom="48sp"
         android:paddingHorizontal="32sp"
         app:layout_constraintBottom_toBottomOf="@id/retanguloSuperior">
+
         <LinearLayout
             android:id="@+id/layoutDeProduto"
             android:layout_width="100sp"
             android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:orientation="vertical"
             android:gravity="center"
-            >
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintEnd_toStartOf="@id/layoutGanhos"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent">
+
             <ImageView
                 android:layout_width="70sp"
                 android:layout_height="70sp"
-                app:srcCompat="@drawable/boxok"
                 android:layout_gravity="center"
-                android:importantForAccessibility="no" />
+                android:importantForAccessibility="no"
+                app:srcCompat="@drawable/boxok" />
 
             <TextView
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="@string/_0_produtos"
                 android:textColor="@color/preto"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
+            android:id="@+id/layoutGanhos"
             android:layout_width="100sp"
             android:layout_height="match_parent"
-            app:layout_constraintStart_toEndOf="@id/layoutDeProduto"
-            android:orientation="vertical"
             android:gravity="center"
-            >
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/layoutProdutoMaisVendido"
+            app:layout_constraintStart_toEndOf="@id/layoutDeProduto">
 
             <ImageView
                 android:layout_width="70sp"
                 android:layout_height="70sp"
                 android:layout_gravity="center"
-                app:srcCompat = "@drawable/porco"
-                />
+                android:importantForAccessibility="no"
+                app:srcCompat="@drawable/porco" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/r_00_00"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:textColor="@color/preto"
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/layoutProdutoMaisVendido"
+            android:layout_width="100sp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@id/layoutGanhos"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                app:srcCompat = "@drawable/champion"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mais_vendido_picles"
+                android:textColor="@color/preto"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                />
+
+
+        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
@@ -120,5 +176,90 @@
         app:layout_constraintTop_toTopOf="@id/bolaCadastrar"
         app:srcCompat="@drawable/boxadd" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardPesquisa"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:layout_marginTop="32sp"
+        android:orientation="vertical"
+        app:cardCornerRadius="20sp"
+        app:layout_constraintEnd_toStartOf="@id/cardRelatorio"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/retanguloSuperior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/lupa"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toTopOf="@id/textoPesquisa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/pesquisa" />
+
+            <TextView
+                android:id="@+id/textoPesquisa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pesquisar"
+                android:textColor="@color/branco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lupa"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardRelatorio"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:layout_marginTop="32sp"
+        android:orientation="vertical"
+        app:cardCornerRadius="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardPesquisa"
+        app:layout_constraintTop_toBottomOf="@id/retanguloSuperior"
+
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/relatarImage"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
+                app:layout_constraintBottom_toTopOf="@id/textoRelatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/relatar" />
+
+            <TextView
+                android:id="@+id/textoRelatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/relat_rios"
+                android:textColor="@color/branco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relatarImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
