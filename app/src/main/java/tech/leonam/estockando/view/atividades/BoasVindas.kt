@@ -1,6 +1,5 @@
 package tech.leonam.estockando.view.atividades
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
@@ -12,14 +11,12 @@ import tech.leonam.estockando.databinding.ActivityBoasVindasBinding
 
 class BoasVindas : AppCompatActivity() {
     private lateinit var binding: ActivityBoasVindasBinding
-    private val PREFS_NAME = "MyPrefs"
     private val KEY_FIRST_TIME = "first_time"
-    private val KEY_NAME = "name"
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("a", MODE_PRIVATE)
         binding = ActivityBoasVindasBinding.inflate(layoutInflater)
 
         if (sharedPreferences.getBoolean(KEY_FIRST_TIME, true)) {
@@ -51,23 +48,29 @@ class BoasVindas : AppCompatActivity() {
                 snackbar.show()
             } else {
                 val name = binding.nomeInicial.text.toString()
-                val editor: SharedPreferences.Editor = sharedPreferences.edit()
-                editor.putString(KEY_NAME, normalizaNome(name))
-                editor.apply()
+
+                val editor = sharedPreferences.edit()
+
+                editor.apply {
+                    val salvar = normalizaNome(name)
+                    putString("chave",salvar)
+                }.apply()
                 startActivity(Intent(this, MainActivity::class.java))
             }
         }
     }
 
     private fun normalizaNome(name: String): String {
-        val nome = name.trim().lowercase().toCharArray()
-        nome[0] = nome[0].uppercaseChar()
-
-        for (i in nome.indices) {
-            if (nome[i] == ' ') {
-                nome[i + 1] = name[i + 1].uppercaseChar()
+        val nome = name.trim().lowercase()
+        var retorno = ""
+        retorno += nome[0].uppercase()
+        for (i in 1 until nome.length) {
+            if (nome[i - 1] == ' ') {
+                retorno += nome[i].uppercase()
+            } else {
+                retorno += nome[i]
             }
         }
-        return nome.toString()
+        return retorno
     }
 }
