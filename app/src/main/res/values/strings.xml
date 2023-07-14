@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Estockando</string>
+    <string name="bemvindo">Bem-Vindo</string>
+    <string name="qual_o_seu_nome">Qual é o seu nome?</string>
+    <string name="iniciar">Iniciar</string>
+    <string name="insira_seu_nome_por_favor">Insira seu nome, por favor!</string>
+</resources>

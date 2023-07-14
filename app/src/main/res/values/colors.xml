@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="preto">#1f1f20</color>
+    <color name="branco">#dce0e6</color>
+    <color name="secundario">#567ebb</color>
+    <color name="terciario">#606d80</color>
+</resources>

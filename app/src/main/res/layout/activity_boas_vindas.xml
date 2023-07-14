@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/preto"
+    tools:context=".view.atividades.BoasVindas">
+    <TextView
+        android:id="@+id/bv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/Calligraphy"
+        android:text="@string/bemvindo"
+        android:textColor="@color/branco"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icone" />
+
+
+    <ImageView
+        android:id="@+id/icone"
+        android:layout_width="175sp"
+        android:layout_height="175sp"
+        android:layout_marginTop="125sp"
+        android:importantForAccessibility="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:srcCompat="@drawable/icon" />
+    <View
+        android:id="@+id/bola"
+        android:layout_width="1300sp"
+        android:layout_height="1300sp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/circulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+
+    </View>
+
+    <Button
+        android:id="@+id/botaoComecar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar"
+        app:layout_constraintTop_toBottomOf="@id/nomeInicial"
+        app:layout_constraintEnd_toEndOf="@id/nomeInicial"
+        android:layout_marginTop="32sp"
+        android:textColor="@color/branco"
+        android:textSize="20sp"
+        android:backgroundTint="@color/preto"
+        />
+
+    <EditText
+        android:background="@color/preto"
+        android:id="@+id/nomeInicial"
+        android:layout_width="match_parent"
+        android:layout_height="48sp"
+        android:inputType="text"
+        android:textColorHint="@color/branco"
+        android:hint="@string/qual_o_seu_nome"
+        android:layout_marginTop="128sp"
+        android:paddingHorizontal="16sp"
+        android:layout_marginHorizontal="20sp"
+        app:layout_constraintTop_toTopOf="@+id/bola"
+        android:importantForAutofill="no" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
