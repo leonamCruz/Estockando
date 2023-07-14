@@ -1,9 +1,6 @@
 package tech.leonam.estockando.view.atividades
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import tech.leonam.estockando.R
 import tech.leonam.estockando.databinding.ActivityMainBinding
