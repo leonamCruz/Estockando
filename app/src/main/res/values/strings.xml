@@ -19,4 +19,9 @@
     <string name="insira_o_id">Insira o ID</string>
     <string name="de">De</string>
     <string name="at">Até</string>
+    <string name="nome_do_produto">Nome do Produto</string>
+    <string name="lorem_ipsum">A rola dele parece um bambu e eu tenho medo do comedor de cu, fui capturado pelo come cu, ele arrombou alargou o meu cu. I ought to just try that with my boss; I\'d get kicked out on the spot. But who knows, maybe that would be the best thing for me. If I.</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="cadastrado_em_dd_mm_aaaa">Cadastrado em: dd/mm/aaaa</string>
+    <string name="rs">R$00,00</string>
 </resources>

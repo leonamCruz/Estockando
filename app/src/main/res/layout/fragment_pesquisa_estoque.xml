@@ -33,7 +33,7 @@
             android:layout_marginStart="28sp"
             android:text="@string/mostrar_todos_os_produtos"
             android:textColor="@color/preto"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -50,7 +50,7 @@
 
         <EditText
             android:id="@+id/numeroDoIdPesquisa"
-            android:layout_width="220sp"
+            android:layout_width="200sp"
             android:layout_height="75sp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="28sp"

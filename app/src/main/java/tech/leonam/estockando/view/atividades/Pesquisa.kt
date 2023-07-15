@@ -14,6 +14,7 @@ class Pesquisa : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPesquisaBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.botaView.adapter = AdaptadorDePaginaPesquisa(this)
         adicionarTabListener()
         arrastaProLado()
     }
@@ -28,9 +29,7 @@ class Pesquisa : AppCompatActivity() {
     }
 
     private fun adicionarTabListener() {
-        binding.botaView.adapter = AdaptadorDePaginaPesquisa(this)
-
-        binding.tab.addOnTabSelectedListener(object : OnTabSelectedListener{
+        binding.tab.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 binding.botaView.currentItem = tab!!.position
             }
