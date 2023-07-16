@@ -30,6 +30,10 @@ class CadastrarDAO(
                     put(COLUMN_QUANTIDADE,qntDoProduto)
 
                     db.insert(NOME_TABELA, null,contentValues)
+                    Thread{
+                        db.close()
+                        helper.close()
+                    }.start()
                 }
             }
         }
