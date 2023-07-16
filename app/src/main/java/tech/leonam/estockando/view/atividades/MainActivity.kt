@@ -3,8 +3,10 @@ package tech.leonam.estockando.view.atividades
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import tech.leonam.estockando.R
 import tech.leonam.estockando.controller.Produtos
+import tech.leonam.estockando.controller.util.UtilImage
 import tech.leonam.estockando.databinding.ActivityMainBinding
 import tech.leonam.estockando.model.CadastrarDAO
 
@@ -23,11 +25,14 @@ class MainActivity : AppCompatActivity() {
     private fun cadastroForcado() {
         val produto = Produtos()
         with(produto) {
-            nomeDoProduto = "Teste"
+            nomeDoProduto = "Zé Buceta"
             descricaoDoProduto = "Caraleo"
             qntDoProduto = "0"
             dataCadastro = "22/09/2000"
-            preco = "R$10,00"
+            preco = "10.00"
+            produto.imagemDoProduto=UtilImage.deBitmapParaBase64(UtilImage.drawableToBitmap(
+                AppCompatResources.getDrawable(this@MainActivity,R.drawable.champion)!!
+            ))
         }
         val cadastrarDAO = CadastrarDAO(this, produto)
         cadastrarDAO.saveInDatabase()

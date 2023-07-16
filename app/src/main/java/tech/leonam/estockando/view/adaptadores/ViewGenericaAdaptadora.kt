@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import tech.leonam.estockando.R
 import tech.leonam.estockando.controller.Produtos
 import tech.leonam.estockando.controller.util.UtilImage
+import tech.leonam.estockando.controller.util.UtilPreco
 
 class ViewGenericaAdaptadora(
     private val lista: ArrayList<Produtos>,
@@ -33,8 +34,13 @@ class ViewGenericaAdaptadora(
                 quantidadeProdutos.text = verificaNull(produto.qntDoProduto!!)
                 descricaoProduto.text = verificaNull(produto.descricaoDoProduto!!)
                 quandoFoiCadastrado.text = verificaNull(produto.dataCadastro!!)
-                //precoProduto.text = verificaNull(produto.preco!!)
-                //imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto!!))
+                precoProduto.text = verificaNull(UtilPreco.normalizaPreco(produto.preco!!))
+                imagemCabulosa.scaleType = ImageView.ScaleType.CENTER_INSIDE
+                try {
+                    imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto!!))
+                }catch (e: Exception){
+                    imagemCabulosa.setImageDrawable(AppCompatResources.getDrawable(context,R.drawable.boxerro))
+                }
             }
 
 
