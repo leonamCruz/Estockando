@@ -5,5 +5,5 @@ import androidx.recyclerview.widget.RecyclerView
 import tech.leonam.estockando.databinding.GenericProductLayoutBinding
 
 class ViewGenerica(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    private val binding: GenericProductLayoutBinding = GenericProductLayoutBinding.bind(itemView)
+    val binding: GenericProductLayoutBinding = GenericProductLayoutBinding.bind(itemView)
 }

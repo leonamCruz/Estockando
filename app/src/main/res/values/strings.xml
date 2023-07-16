@@ -24,4 +24,9 @@
     <string name="quantidade">Quantidade</string>
     <string name="cadastrado_em_dd_mm_aaaa">Cadastrado em: dd/mm/aaaa</string>
     <string name="rs">R$00,00</string>
+    <string name="n_o_h_produtos">Não há produtos</string>
+    <string name="cadastre_novos_produtos_para_eles_aparecerem_por_aqui">Cadastre novos produtos para eles aparecerem por aqui.</string>
+    <string name="nada_por_aqui">Nada por aqui :(</string>
+    <string name="_0">0</string>
+    <string name="n_o_possui">Não possui</string>
 </resources>
