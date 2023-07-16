@@ -12,7 +12,7 @@
         android:theme="@style/Theme.MaterialComponents.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".view.reciclaveis.RecyclerView"
+            android:name=".view.reciclaveis.RecyclerViewClasse"
             android:exported="false" />
         <activity
             android:name=".view.atividades.Pesquisa"
