@@ -34,7 +34,7 @@ class ViewGenericaAdaptadora(
                 descricaoProduto.text = verificaNull(produto.descricaoDoProduto!!)
                 quandoFoiCadastrado.text = verificaNull(produto.dataCadastro!!)
                 precoProduto.text = verificaNull(produto.preco!!)
-                imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto!!))
+                //imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto!!))
             }
 
 
