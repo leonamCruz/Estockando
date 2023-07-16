@@ -64,6 +64,7 @@
                 app:srcCompat="@drawable/boxok" />
 
             <TextView
+                android:id="@+id/textoQntDeProdutos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -9,4 +9,8 @@ class PesquisaService(context: Context) : ContratoPesquisa {
     override fun pegaTudo(): ArrayList<Produtos> {
         return PesquisaDAO(contexto).pegaTudo()
     }
+
+    override fun pegaQntdDeProdutos(): Long {
+        return PesquisaDAO(contexto).pegaQntdDeProdutos()
+    }
 }

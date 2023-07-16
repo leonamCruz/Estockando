@@ -30,6 +30,7 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
                             codigoDeBarras = cursor.getString(COLUMN_CODIGO_BARRAS_POSITION)
                             imagemDoProduto = cursor.getString(COLUMN_IMAGEM_POSITION)
                             qntDoProduto = cursor.getString(COLUMN_QUANTIDADE_POSITION)
+
                         }
                     }
                     lista.add(produto)
@@ -37,8 +38,20 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
                 }
             }
         }
-
+        Thread{
+            db.close()
+        }.start()
         return lista
     }
 
+    override fun pegaQntdDeProdutos(): Long {
+        val sql = "SELECT COUNT(${Helper.COLUMN_ID}) FROM ${Helper.NOME_TABELA}"
+        val rawQuery = db.rawQuery(sql, null)
+        val retorno = if (rawQuery.moveToFirst()) rawQuery.getLong(0) else 0
+        Thread{
+            rawQuery.close()
+            db.close()
+        }.start()
+        return retorno
+    }
 }

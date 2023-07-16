@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import tech.leonam.estockando.R
+import tech.leonam.estockando.controller.PesquisaService
 import tech.leonam.estockando.controller.Produtos
 import tech.leonam.estockando.controller.util.UtilImage
 import tech.leonam.estockando.databinding.ActivityMainBinding
@@ -20,6 +21,14 @@ class MainActivity : AppCompatActivity() {
         setarNome()
         clickPesquisa()
         cadastroForcado()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        atualizarInfos()
+    }
+    private fun atualizarInfos() {
+        binding.textoQntDeProdutos.text = PesquisaService(this).pegaQntdDeProdutos().toString()
     }
 
     private fun cadastroForcado() {
