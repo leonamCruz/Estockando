@@ -7,7 +7,6 @@ import tech.leonam.estockando.R
 import tech.leonam.estockando.controller.Produtos
 import tech.leonam.estockando.databinding.ActivityMainBinding
 import tech.leonam.estockando.model.CadastrarDAO
-import tech.leonam.estockando.view.adaptadores.AdaptadorDePaginaPesquisa
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
