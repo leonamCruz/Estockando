@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             descricaoDoProduto = "Caraleo"
             qntDoProduto = "0"
             dataCadastro = "22/09/2000"
+            preco = "R$10,00"
         }
         val cadastrarDAO = CadastrarDAO(this, produto)
         cadastrarDAO.saveInDatabase()

@@ -16,30 +16,29 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
         val cursor = db.rawQuery(SQL_PEGA_TUDO, null)
         val lista = ArrayList<Produtos>()
 
-        with(cursor) {
-            if (moveToFirst()) {
-                while (!isAfterLast) {
+        cursor.use {
+            if (cursor.moveToFirst()) {
+                while (!cursor.isAfterLast) {
                     val produto = Produtos()
                     with(produto) {
                         with(Helper) {
-                            id = getLong(COLUMN_ID_POSITION)
-                            nomeDoProduto = getString(COLUMN_NOME_POSITION)
-                            descricaoDoProduto = getString(COLUMN_DESCRICAO_POSITION)
-                            dataCadastro = getString(COLUMN_DATA_CADASTRO_POSITION)
-                            preco = getString(COLUMN_PRECO_POSITION)
-                            codigoDeBarras = getString(COLUMN_CODIGO_BARRAS_POSITION)
-                            imagemDoProduto = getString(COLUMN_IMAGEM_POSITION)
-                            qntDoProduto = getString(COLUMN_QUANTIDADE_POSITION)
-                            lista.add(produto)
+                            id = cursor.getLong(COLUMN_ID_POSITION)
+                            nomeDoProduto = cursor.getString(COLUMN_NOME_POSITION)
+                            descricaoDoProduto = cursor.getString(COLUMN_DESCRICAO_POSITION)
+                            dataCadastro = cursor.getString(COLUMN_DATA_CADASTRO_POSITION)
+                            preco = cursor.getString(COLUMN_PRECO_POSITION)
+                            codigoDeBarras = cursor.getString(COLUMN_CODIGO_BARRAS_POSITION)
+                            imagemDoProduto = cursor.getString(COLUMN_IMAGEM_POSITION)
+                            qntDoProduto = cursor.getString(COLUMN_QUANTIDADE_POSITION)
                         }
                     }
+                    lista.add(produto)
+                    cursor.moveToNext()
                 }
             }
         }
-        Thread {
-            cursor.close()
-            db.close()
-        }.start()
+
         return lista
     }
+
 }

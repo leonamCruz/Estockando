@@ -33,7 +33,7 @@ class ViewGenericaAdaptadora(
                 quantidadeProdutos.text = verificaNull(produto.qntDoProduto!!)
                 descricaoProduto.text = verificaNull(produto.descricaoDoProduto!!)
                 quandoFoiCadastrado.text = verificaNull(produto.dataCadastro!!)
-                precoProduto.text = verificaNull(produto.preco!!)
+                //precoProduto.text = verificaNull(produto.preco!!)
                 //imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto!!))
             }
 
@@ -59,6 +59,6 @@ class ViewGenericaAdaptadora(
     }
 
     private fun verificaNull(texto: String): String {
-        return if (texto.isBlank()) context.getString(R.string.n_o_possui) else return texto
+        return if (texto.isNullOrBlank()) context.getString(R.string.n_o_possui) else return texto
     }
 }
