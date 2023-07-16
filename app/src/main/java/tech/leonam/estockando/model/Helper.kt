@@ -24,7 +24,5 @@ class Helper(context:Context) : SQLiteOpenHelper(context, DATABASE_NAME,null, DA
         p0?.execSQL(sql)
     }
 
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-        TODO("Not yet implemented")
-    }
+    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {}
 }
