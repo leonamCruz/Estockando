@@ -1,4 +1,4 @@
-package tech.leonam.estockando.model
+package tech.leonam.estockando.model.contratos
 
 import tech.leonam.estockando.viewModel.Produtos
 

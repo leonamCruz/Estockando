@@ -5,11 +5,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import tech.leonam.estockando.R
-import tech.leonam.estockando.viewModel.PesquisaService
+import tech.leonam.estockando.viewModel.Pesquisar
 import tech.leonam.estockando.viewModel.Produtos
 import tech.leonam.estockando.viewModel.util.UtilImage
 import tech.leonam.estockando.databinding.ActivityMainBinding
-import tech.leonam.estockando.model.CadastrarDAO
+import tech.leonam.estockando.model.dao.CadastrarDAO
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         atualizarInfos()
     }
     private fun atualizarInfos() {
-        binding.textoQntDeProdutos.text = PesquisaService(this).pegaQntdDeProdutos().toString()
+        binding.textoQntDeProdutos.text = Pesquisar(this).pegaQntdDeProdutos().toString()
     }
 
     private fun cadastroForcado() {

@@ -1,4 +1,4 @@
-package tech.leonam.estockando.model
+package tech.leonam.estockando.model.dao
 
 import android.content.ContentValues
 import android.content.Context

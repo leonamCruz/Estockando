@@ -3,7 +3,7 @@ package tech.leonam.estockando.view.reciclaveis
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import tech.leonam.estockando.viewModel.PesquisaService
+import tech.leonam.estockando.viewModel.Pesquisar
 import tech.leonam.estockando.databinding.ActivityReciclavelMostrarTudoBinding
 import tech.leonam.estockando.view.adaptadores.ViewGenericaAdaptadora
 
@@ -18,7 +18,7 @@ class RecyclerViewClasse : AppCompatActivity() {
 
     private fun adaptador() {
         with(binding.reciclavel){
-            adapter = ViewGenericaAdaptadora(PesquisaService(context).pegaTudo(), context)
+            adapter = ViewGenericaAdaptadora(Pesquisar(context).pegaTudo(), context)
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
             setHasFixedSize(true)
         }

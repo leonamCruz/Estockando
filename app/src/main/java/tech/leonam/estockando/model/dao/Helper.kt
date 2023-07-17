@@ -1,4 +1,4 @@
-package tech.leonam.estockando.model
+package tech.leonam.estockando.model.dao
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

@@ -1,7 +1,8 @@
-package tech.leonam.estockando.model
+package tech.leonam.estockando.model.dao
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import tech.leonam.estockando.model.contratos.ContratoPesquisa
 import tech.leonam.estockando.viewModel.Produtos
 
 class PesquisaDAO(context: Context) : ContratoPesquisa {

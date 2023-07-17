@@ -1,10 +1,10 @@
 package tech.leonam.estockando.viewModel
 
 import android.content.Context
-import tech.leonam.estockando.model.ContratoPesquisa
-import tech.leonam.estockando.model.PesquisaDAO
+import tech.leonam.estockando.model.contratos.ContratoPesquisa
+import tech.leonam.estockando.model.dao.PesquisaDAO
 
-class PesquisaService(context: Context) : ContratoPesquisa {
+class Pesquisar(context: Context) : ContratoPesquisa {
     private val contexto = context
     override fun pegaTudo(): ArrayList<Produtos> {
         return PesquisaDAO(contexto).pegaTudo()
