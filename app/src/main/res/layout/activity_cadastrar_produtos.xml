@@ -9,7 +9,7 @@
     <View
         android:id="@+id/retanguloDoCadastro"
         android:layout_width="match_parent"
-        android:layout_height="150sp"
+        android:layout_height="125sp"
         android:background="@drawable/square"
         android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent"></View>
@@ -51,7 +51,7 @@
     <View
         android:id="@+id/desgrace"
         android:layout_width="match_parent"
-        android:layout_height="500sp"
+        android:layout_height="550sp"
         android:background="@drawable/square"
         android:backgroundTint="@color/pretoPuro"
         app:layout_constraintTop_toTopOf="parent" />
@@ -67,6 +67,7 @@
         android:padding="16sp"
         app:layout_constraintBottom_toTopOf="@id/descricao"
         app:layout_constraintTop_toTopOf="@+id/desgrace"
+
         app:layout_constraintVertical_chainStyle="packed" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -123,6 +124,50 @@
         android:hint="@string/c_digo_de_barras"
         android:maxLength="255"
         android:padding="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/desgrace"
+        app:layout_constraintBottom_toTopOf="@id/imageCodeButton"
         app:layout_constraintTop_toBottomOf="@id/preco" />
+
+    <ImageView
+        android:id="@+id/imageCodeButton"
+        android:layout_width="65sp"
+        android:layout_height="65sp"
+        android:layout_marginTop="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/desgrace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/camera"
+        app:layout_constraintTop_toBottomOf="@+id/codigoDeBarras"
+        app:srcCompat="@drawable/code_bar"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="65sp"
+        android:layout_height="65sp"
+        app:layout_constraintBottom_toBottomOf="@id/imageCodeButton"
+        app:layout_constraintEnd_toStartOf="@id/imageCodeButton"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageCodeButton"
+        app:srcCompat="@drawable/cam"
+        android:importantForAccessibility="no" />
+
+    <ImageView
+        android:id="@+id/imageCodigoDeBarras"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        app:layout_constraintTop_toBottomOf="@id/desgrace"
+        android:layout_marginTop="8sp"
+        android:layout_marginHorizontal="8sp"
+        app:layout_constraintBottom_toTopOf="@id/retanguloDoCadastro"
+        />
+
+    <ImageView
+        android:layout_width="25sp"
+        android:layout_height="25sp"
+        app:layout_constraintStart_toEndOf="@id/camera"
+        app:layout_constraintBottom_toBottomOf="@id/camera"
+        app:layout_constraintTop_toTopOf="@id/camera"
+        android:layout_marginStart="8sp"
+        app:srcCompat = "@drawable/check"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
