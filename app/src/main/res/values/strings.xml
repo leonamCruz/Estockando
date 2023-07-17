@@ -29,4 +29,9 @@
     <string name="nada_por_aqui">Nada por aqui :(</string>
     <string name="_0">0</string>
     <string name="n_o_possui">Não possui</string>
+    <string name="cadastrar_produto">Cadastrar Produto</string>
+    <string name="nome">Nome</string>
+    <string name="descri_o_do_produto">Descrição do produto</string>
+    <string name="pre_o">Preço</string>
+    <string name="c_digo_de_barras">Código de Barras</string>
 </resources>

@@ -4,4 +4,5 @@
     <color name="branco">#dce0e6</color>
     <color name="secundario">#567ebb</color>
     <color name="terciario">#606d80</color>
+    <color name="pretoPuro">#000</color>
 </resources>

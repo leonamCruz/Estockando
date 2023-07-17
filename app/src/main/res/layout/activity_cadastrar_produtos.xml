@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.atividades.CadastrarProdutos">
+
+    <View
+        android:id="@+id/retanguloDoCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:background="@drawable/square"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"></View>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clicar_para_cadastrar"
+        android:layout_width="match_parent"
+        android:layout_height="90sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/retanguloDoCadastro">
+
+        <ImageView
+            android:id="@+id/cadastrarBotao"
+            android:layout_width="75sp"
+            android:layout_height="75sp"
+            android:layout_marginEnd="8sp"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/texto_cadastrar"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/boxadd" />
+
+        <TextView
+            android:id="@+id/texto_cadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cadastrar_produto"
+            android:textColor="@color/preto"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/cadastrarBotao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cadastrarBotao"
+            app:layout_constraintTop_toTopOf="@id/cadastrarBotao" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/desgrace"
+        android:layout_width="match_parent"
+        android:layout_height="500sp"
+        android:background="@drawable/square"
+        android:backgroundTint="@color/pretoPuro"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:layout_marginHorizontal="22sp"
+        android:background="@drawable/retangulo_perguntas"
+        android:hint="@string/nome"
+        android:maxLength="255"
+        android:padding="16sp"
+        app:layout_constraintBottom_toTopOf="@id/descricao"
+        app:layout_constraintTop_toTopOf="@+id/desgrace"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/descricao"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_marginHorizontal="22sp"
+        android:layout_marginTop="32sp"
+        android:background="@drawable/retangulo_perguntas"
+        android:hint="@string/descri_o_do_produto"
+        android:maxLength="255"
+        android:padding="16sp"
+        app:layout_constraintBottom_toTopOf="@id/preco"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/preco"
+        android:layout_width="0sp"
+        android:layout_height="55sp"
+        android:layout_marginHorizontal="22sp"
+        android:layout_marginTop="32sp"
+        android:background="@drawable/retangulo_perguntas"
+        android:hint="@string/pre_o"
+        android:maxLength="255"
+        android:padding="16sp"
+        app:layout_constraintBottom_toTopOf="@id/codigoDeBarras"
+        app:layout_constraintEnd_toStartOf="@id/quantidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descricao"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/quantidade"
+        android:layout_width="0sp"
+        android:layout_height="55sp"
+        android:layout_marginHorizontal="22sp"
+        android:background="@drawable/retangulo_perguntas"
+        android:hint="@string/quantidade"
+        android:maxLength="255"
+        android:padding="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/preco"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@id/preco"
+        app:layout_constraintTop_toTopOf="@+id/preco" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/codigoDeBarras"
+        android:layout_width="match_parent"
+        android:layout_height="55sp"
+        android:layout_marginHorizontal="22sp"
+        android:layout_marginTop="32sp"
+        android:background="@drawable/retangulo_perguntas"
+        android:hint="@string/c_digo_de_barras"
+        android:maxLength="255"
+        android:padding="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/desgrace"
+        app:layout_constraintTop_toBottomOf="@id/preco" />
+</androidx.constraintlayout.widget.ConstraintLayout>
