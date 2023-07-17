@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import tech.leonam.estockando.R
-import tech.leonam.estockando.controller.PesquisaService
-import tech.leonam.estockando.controller.Produtos
-import tech.leonam.estockando.controller.util.UtilImage
+import tech.leonam.estockando.viewModel.PesquisaService
+import tech.leonam.estockando.viewModel.Produtos
+import tech.leonam.estockando.viewModel.util.UtilImage
 import tech.leonam.estockando.databinding.ActivityMainBinding
 import tech.leonam.estockando.model.CadastrarDAO
 

@@ -2,7 +2,7 @@ package tech.leonam.estockando.model
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import tech.leonam.estockando.controller.Produtos
+import tech.leonam.estockando.viewModel.Produtos
 
 class PesquisaDAO(context: Context) : ContratoPesquisa {
     private val SQL_PEGA_TUDO = "SELECT * FROM ${Helper.NOME_TABELA}"

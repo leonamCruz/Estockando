@@ -1,4 +1,4 @@
-package tech.leonam.estockando.controller
+package tech.leonam.estockando.viewModel
 
 import android.content.Context
 import tech.leonam.estockando.model.ContratoPesquisa

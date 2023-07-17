@@ -2,7 +2,7 @@ package tech.leonam.estockando.model
 
 import android.content.ContentValues
 import android.content.Context
-import tech.leonam.estockando.controller.Produtos
+import tech.leonam.estockando.viewModel.Produtos
 
 class CadastrarDAO(
     context: Context,

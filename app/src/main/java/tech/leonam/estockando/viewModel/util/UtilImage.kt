@@ -1,4 +1,4 @@
-package tech.leonam.estockando.controller.util
+package tech.leonam.estockando.viewModel.util
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

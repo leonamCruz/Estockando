@@ -7,9 +7,9 @@ import android.widget.ImageView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import tech.leonam.estockando.R
-import tech.leonam.estockando.controller.Produtos
-import tech.leonam.estockando.controller.util.UtilImage
-import tech.leonam.estockando.controller.util.UtilPreco
+import tech.leonam.estockando.viewModel.Produtos
+import tech.leonam.estockando.viewModel.util.UtilImage
+import tech.leonam.estockando.viewModel.util.UtilPreco
 
 class ViewGenericaAdaptadora(
     private val lista: ArrayList<Produtos>,

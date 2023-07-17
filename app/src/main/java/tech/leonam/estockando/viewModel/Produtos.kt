@@ -1,5 +1,4 @@
-package tech.leonam.estockando.controller
-
+package tech.leonam.estockando.viewModel
 class Produtos {
     var id: Long = 0
     var nomeDoProduto: String? = null

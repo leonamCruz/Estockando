@@ -7,7 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
-import tech.leonam.estockando.controller.util.UtilTexto
+import tech.leonam.estockando.viewModel.util.UtilTexto
 import tech.leonam.estockando.databinding.ActivityBoasVindasBinding
 
 class BoasVindas : AppCompatActivity() {

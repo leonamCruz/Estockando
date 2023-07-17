@@ -1,4 +1,4 @@
-package tech.leonam.estockando.controller.util
+package tech.leonam.estockando.viewModel.util
 
 class UtilPreco {
     companion object {
