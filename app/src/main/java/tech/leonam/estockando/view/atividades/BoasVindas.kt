@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
+import tech.leonam.estockando.controller.util.UtilTexto
 import tech.leonam.estockando.databinding.ActivityBoasVindasBinding
 
 class BoasVindas : AppCompatActivity() {
@@ -52,7 +53,7 @@ class BoasVindas : AppCompatActivity() {
                 val editor = sharedPreferences.edit()
 
                 editor.apply {
-                    val salvar = normalizaNome(name)
+                    val salvar = UtilTexto.normalizaNome(name)
                     putString("chave",salvar)
                 }.apply()
                 startActivity(Intent(this, MainActivity::class.java))
@@ -61,17 +62,5 @@ class BoasVindas : AppCompatActivity() {
         }
     }
 
-    private fun normalizaNome(name: String): String {
-        val nome = name.trim().lowercase()
-        var retorno = ""
-        retorno += nome[0].uppercase()
-        for (i in 1 until nome.length) {
-            if (nome[i - 1] == ' ') {
-                retorno += nome[i].uppercase()
-            } else {
-                retorno += nome[i]
-            }
-        }
-        return retorno
-    }
+
 }

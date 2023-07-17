@@ -21,6 +21,13 @@ class MainActivity : AppCompatActivity() {
         setarNome()
         clickPesquisa()
         cadastroForcado()
+        clickCadastrar()
+    }
+
+    private fun clickCadastrar() {
+        binding.bolaCadastrar.setOnClickListener {
+            startActivity(Intent(this,CadastrarProdutos::class.java))
+        }
     }
 
     override fun onStart() {
