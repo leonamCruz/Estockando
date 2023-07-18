@@ -9,7 +9,7 @@
     <View
         android:id="@+id/retanguloDoCadastro"
         android:layout_width="match_parent"
-        android:layout_height="125sp"
+        android:layout_height="120sp"
         android:background="@drawable/square"
         android:rotation="180"
         app:layout_constraintBottom_toBottomOf="parent" />
