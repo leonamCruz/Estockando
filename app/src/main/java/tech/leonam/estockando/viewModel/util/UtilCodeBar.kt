@@ -11,7 +11,7 @@ class UtilCodeBar {
             if (numeracao.length != 13) {
                 throw Exception("Númeração menor do que 13")
             }
-            val codigoMatrix = EAN13Writer().encode(numeracao, BarcodeFormat.EAN_13, 1024, 1024)
+            val codigoMatrix = EAN13Writer().encode(numeracao, BarcodeFormat.EAN_13, 1024, 512)
             val bitmap =
                 Bitmap.createBitmap(codigoMatrix.width, codigoMatrix.height, Bitmap.Config.RGB_565)
             for (x in 0 until codigoMatrix.width) {

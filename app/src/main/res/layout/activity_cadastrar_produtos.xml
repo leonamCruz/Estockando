@@ -159,9 +159,10 @@
         android:layout_marginTop="8sp"
         android:layout_marginHorizontal="8sp"
         app:layout_constraintBottom_toTopOf="@id/retanguloDoCadastro"
-        />
+        android:importantForAccessibility="no" />
 
     <ImageView
+        android:id="@+id/check"
         android:layout_width="25sp"
         android:layout_height="25sp"
         app:layout_constraintStart_toEndOf="@id/camera"
@@ -169,5 +170,5 @@
         app:layout_constraintTop_toTopOf="@id/camera"
         android:layout_marginStart="8sp"
         app:srcCompat = "@drawable/check"
-        />
+        android:importantForAccessibility="no" />
 </androidx.constraintlayout.widget.ConstraintLayout>

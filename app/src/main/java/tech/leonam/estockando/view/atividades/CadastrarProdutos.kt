@@ -1,12 +1,29 @@
 package tech.leonam.estockando.view.atividades
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import tech.leonam.estockando.R
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import tech.leonam.estockando.databinding.ActivityCadastrarProdutosBinding
 
 class CadastrarProdutos : AppCompatActivity() {
+    private lateinit var binding: ActivityCadastrarProdutosBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastrar_produtos)
+        binding = ActivityCadastrarProdutosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.check.isVisible = false
+        cadastrar()
+        clickPegadorDeCodigoDeBarras()
+    }
+
+    private fun clickPegadorDeCodigoDeBarras() {
+        binding.imageCodeButton.setOnClickListener {
+            startActivity(Intent(this, CodigoDeBarras::class.java))
+        }
+    }
+
+    private fun cadastrar() {
+        TODO()
     }
 }
