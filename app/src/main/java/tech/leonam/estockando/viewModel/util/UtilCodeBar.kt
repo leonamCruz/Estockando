@@ -21,5 +21,8 @@ class UtilCodeBar {
             }
             return bitmap
         }
+        fun deBitmapComCodigoDeBarrasParaTexto(bitmap:Bitmap):String{
+            return ""
+        }
     }
 }

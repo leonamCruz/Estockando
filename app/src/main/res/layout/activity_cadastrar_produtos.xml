@@ -151,6 +151,12 @@
         app:srcCompat="@drawable/cam"
         android:importantForAccessibility="no" />
 
+    <com.journeyapps.barcodescanner.DecoratedBarcodeView
+        android:id="@+id/visualizaoCamera"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/retanguloDoCadastro"
+        app:layout_constraintTop_toBottomOf="@id/imageCodigoDeBarras" />
     <ImageView
         android:id="@+id/imageCodigoDeBarras"
         android:layout_width="match_parent"
@@ -158,7 +164,7 @@
         app:layout_constraintTop_toBottomOf="@id/desgrace"
         android:layout_marginTop="8sp"
         android:layout_marginHorizontal="8sp"
-        app:layout_constraintBottom_toTopOf="@id/retanguloDoCadastro"
+        app:layout_constraintBottom_toTopOf="@id/visualizaoCamera"
         android:importantForAccessibility="no" />
 
     <ImageView
