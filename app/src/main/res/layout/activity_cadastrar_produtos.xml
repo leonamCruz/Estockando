@@ -12,7 +12,7 @@
         android:layout_height="125sp"
         android:background="@drawable/square"
         android:rotation="180"
-        app:layout_constraintBottom_toBottomOf="parent"></View>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clicar_para_cadastrar"
@@ -51,15 +51,15 @@
     <View
         android:id="@+id/desgrace"
         android:layout_width="match_parent"
-        android:layout_height="550sp"
+        android:layout_height="500sp"
         android:background="@drawable/square"
         android:backgroundTint="@color/pretoPuro"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/nome"
         android:layout_width="match_parent"
-        android:layout_height="55sp"
+        android:layout_height="50sp"
         android:layout_marginHorizontal="22sp"
         android:background="@drawable/retangulo_perguntas"
         android:hint="@string/nome"
@@ -73,7 +73,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/descricao"
         android:layout_width="match_parent"
-        android:layout_height="100sp"
+        android:layout_height="95sp"
         android:layout_marginHorizontal="22sp"
         android:layout_marginTop="32sp"
         android:background="@drawable/retangulo_perguntas"
@@ -86,7 +86,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/preco"
         android:layout_width="0sp"
-        android:layout_height="55sp"
+        android:layout_height="50sp"
         android:layout_marginHorizontal="22sp"
         android:layout_marginTop="32sp"
         android:background="@drawable/retangulo_perguntas"
@@ -102,7 +102,7 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/quantidade"
         android:layout_width="0sp"
-        android:layout_height="55sp"
+        android:layout_height="50sp"
         android:layout_marginHorizontal="22sp"
         android:background="@drawable/retangulo_perguntas"
         android:hint="@string/quantidade"
@@ -117,64 +117,44 @@
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/codigoDeBarras"
         android:layout_width="match_parent"
-        android:layout_height="55sp"
+        android:layout_height="50sp"
         android:layout_marginHorizontal="22sp"
         android:layout_marginTop="32sp"
         android:background="@drawable/retangulo_perguntas"
         android:hint="@string/c_digo_de_barras"
         android:maxLength="255"
         android:padding="16sp"
-        app:layout_constraintBottom_toTopOf="@id/imageCodeButton"
-        app:layout_constraintTop_toBottomOf="@id/preco" />
-
-    <ImageView
-        android:id="@+id/imageCodeButton"
-        android:layout_width="65sp"
-        android:layout_height="65sp"
-        android:layout_marginTop="32sp"
-        app:layout_constraintBottom_toBottomOf="@+id/desgrace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/camera"
-        app:layout_constraintTop_toBottomOf="@+id/codigoDeBarras"
-        app:srcCompat="@drawable/code_bar"
-        android:importantForAccessibility="no" />
+        app:layout_constraintBottom_toTopOf="@+id/camera"
+        app:layout_constraintTop_toBottomOf="@id/preco"
+        tools:layout_editor_absoluteX="22dp" />
 
     <ImageView
         android:id="@+id/camera"
-        android:layout_width="65sp"
-        android:layout_height="65sp"
-        app:layout_constraintBottom_toBottomOf="@id/imageCodeButton"
-        app:layout_constraintEnd_toStartOf="@id/imageCodeButton"
-        app:layout_constraintHorizontal_chainStyle="spread"
+        android:layout_width="55sp"
+        android:layout_height="55sp"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/desgrace"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageCodeButton"
-        app:srcCompat="@drawable/cam"
-        android:importantForAccessibility="no" />
+        android:layout_marginTop="32sp"
+        app:layout_constraintTop_toBottomOf="@id/codigoDeBarras"
+        app:srcCompat="@drawable/cam" />
 
     <com.journeyapps.barcodescanner.DecoratedBarcodeView
         android:id="@+id/visualizaoCamera"
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="75sp"
         app:layout_constraintBottom_toTopOf="@+id/retanguloDoCadastro"
-        app:layout_constraintTop_toBottomOf="@id/imageCodigoDeBarras" />
-    <ImageView
-        android:id="@+id/imageCodigoDeBarras"
-        android:layout_width="match_parent"
-        android:layout_height="50sp"
-        app:layout_constraintTop_toBottomOf="@id/desgrace"
-        android:layout_marginTop="8sp"
-        android:layout_marginHorizontal="8sp"
-        app:layout_constraintBottom_toTopOf="@id/visualizaoCamera"
-        android:importantForAccessibility="no" />
+        app:layout_constraintTop_toBottomOf="@+id/desgrace" />
 
     <ImageView
         android:id="@+id/check"
         android:layout_width="25sp"
         android:layout_height="25sp"
-        app:layout_constraintStart_toEndOf="@id/camera"
-        app:layout_constraintBottom_toBottomOf="@id/camera"
-        app:layout_constraintTop_toTopOf="@id/camera"
         android:layout_marginStart="8sp"
-        app:srcCompat = "@drawable/check"
-        android:importantForAccessibility="no" />
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/camera"
+        app:layout_constraintStart_toEndOf="@id/camera"
+        app:layout_constraintTop_toTopOf="@id/camera"
+        app:srcCompat="@drawable/check" />
 </androidx.constraintlayout.widget.ConstraintLayout>

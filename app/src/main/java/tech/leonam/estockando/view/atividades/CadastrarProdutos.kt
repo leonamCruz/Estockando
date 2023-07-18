@@ -29,7 +29,6 @@ class CadastrarProdutos : AppCompatActivity() {
         }
         binding.check.isVisible = false
         cadastrar()
-        clickPegadorDeCodigoDeBarras()
     }
 
     private fun checkCameraPermission(): Boolean {
@@ -51,7 +50,7 @@ class CadastrarProdutos : AppCompatActivity() {
         super.onResume()
         if (checkCameraPermission()) {
             scannerView.resume()
-            scannerView.decodeContinuous(callback) // Configura o callback de leitura contínua
+            scannerView.decodeContinuous(callback)
         }
     }
 
@@ -78,17 +77,10 @@ class CadastrarProdutos : AppCompatActivity() {
 
     private val callback = object : BarcodeCallback {
         override fun barcodeResult(result: BarcodeResult?) {
-            println(result?.text)
+            binding.codigoDeBarras.setText(result?.text)
         }
 
         override fun possibleResultPoints(resultPoints: MutableList<ResultPoint>?) {}
-    }
-
-    private fun clickPegadorDeCodigoDeBarras() {
-        binding.imageCodeButton.setOnClickListener {
-            // Chame o scanner quando o botão for clicado (ou implemente a lógica que desejar)
-            scannerView.decodeSingle(callback)
-        }
     }
 
     private fun cadastrar() {
