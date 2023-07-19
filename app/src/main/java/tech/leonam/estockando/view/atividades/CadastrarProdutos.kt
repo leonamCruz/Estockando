@@ -1,9 +1,14 @@
 package tech.leonam.estockando.view.atividades
 
 import android.Manifest
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.MediaStore
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
@@ -11,13 +16,15 @@ import com.google.zxing.ResultPoint
 import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
+import tech.leonam.estockando.R
 import tech.leonam.estockando.databinding.ActivityCadastrarProdutosBinding
 
 class CadastrarProdutos : AppCompatActivity() {
     private lateinit var binding: ActivityCadastrarProdutosBinding
     private lateinit var scannerView: DecoratedBarcodeView
     private val CAMERA_PERMISSION_REQUEST_CODE = 1001
-
+    private val REQUEST_GALLERY_IMAGE = 101
+    private val REQUEST_CAMERA_IMAGE = 102
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCadastrarProdutosBinding.inflate(layoutInflater)
@@ -29,6 +36,23 @@ class CadastrarProdutos : AppCompatActivity() {
         }
         binding.check.isVisible = false
         cadastrar()
+        pegaImagem()
+    }
+
+    private fun pegaImagem() {
+        binding.camera.setOnClickListener {
+            val build: AlertDialog.Builder = AlertDialog.Builder(this)
+            build.setTitle(getString(R.string.quer_da_c_mera_ou_galeria))
+            build.setMessage(getString(R.string.escolha_entre_sua_c_mera_e_galeria_para_selecionar_a_foto_do_produto))
+            build.setPositiveButtonIcon(AppCompatResources.getDrawable(this, R.drawable.galeria))
+            build.setNegativeButtonIcon(AppCompatResources.getDrawable(this, R.drawable.cam))
+            build.setPositiveButton(getString(R.string.galeria)) { _, _ ->
+
+            }
+            build.setNegativeButton(getString(R.string.c_mera)) { _, _ ->
+
+            }
+        }
     }
 
     private fun checkCameraPermission(): Boolean {

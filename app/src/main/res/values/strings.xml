@@ -34,4 +34,8 @@
     <string name="descri_o_do_produto">Descrição do produto</string>
     <string name="pre_o">Preço</string>
     <string name="c_digo_de_barras">Código de Barras</string>
+    <string name="quer_da_c_mera_ou_galeria">Quer da Câmera ou Galeria?</string>
+    <string name="escolha_entre_sua_c_mera_e_galeria_para_selecionar_a_foto_do_produto">Escolha entre sua câmera e galeria para selecionar a foto do produto.</string>
+    <string name="galeria">Galeria</string>
+    <string name="c_mera">Câmera</string>
 </resources>
