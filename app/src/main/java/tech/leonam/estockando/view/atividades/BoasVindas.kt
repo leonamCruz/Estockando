@@ -2,17 +2,16 @@ package tech.leonam.estockando.view.atividades
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
-import tech.leonam.estockando.viewModel.util.UtilTexto
 import tech.leonam.estockando.databinding.ActivityBoasVindasBinding
+import tech.leonam.estockando.viewModel.util.UtilTexto
 
 class BoasVindas : AppCompatActivity() {
     private lateinit var binding: ActivityBoasVindasBinding
-    private val KEY_FIRST_TIME = "first_time"
+    private val KEY_FIRST_TIME: String = "first_time"
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,10 +41,8 @@ class BoasVindas : AppCompatActivity() {
                     getString(R.string.insira_seu_nome_por_favor),
                     Snackbar.LENGTH_SHORT
                 )
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    snackbar.setTextColor(getColor(R.color.branco))
-                    snackbar.setBackgroundTint(getColor(R.color.preto))
-                }
+                snackbar.setTextColor(getColor(R.color.branco))
+                snackbar.setBackgroundTint(getColor(R.color.preto))
                 snackbar.show()
             } else {
                 val name = binding.nomeInicial.text.toString()
