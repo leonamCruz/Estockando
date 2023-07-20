@@ -42,4 +42,5 @@
     <string name="permissao_negada_armazenamento">Permissão de leitura de armazenamento externo negada.</string>
     <string name="falha_no_processamento_da_imagem">Falha no processamento da imagem.</string>
     <string name="cadastrado_com_sucesso">Cadastrado Com Sucesso</string>
+    <string name="cadastrado_em">Cadastrado em:</string>
 </resources>
