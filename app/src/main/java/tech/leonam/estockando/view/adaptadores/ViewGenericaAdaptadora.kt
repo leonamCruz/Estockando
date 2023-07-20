@@ -65,6 +65,6 @@ class ViewGenericaAdaptadora(
     }
 
     private fun verificaNull(texto: String): String {
-        return if (texto.isNullOrBlank()) context.getString(R.string.n_o_possui) else return texto
+        return if (texto.isBlank()) context.getString(R.string.n_o_possui) else return texto
     }
 }

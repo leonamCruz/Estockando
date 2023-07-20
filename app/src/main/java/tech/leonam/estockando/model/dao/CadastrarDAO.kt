@@ -2,12 +2,13 @@ package tech.leonam.estockando.model.dao
 
 import android.content.ContentValues
 import android.content.Context
+import tech.leonam.estockando.model.contratos.ContratoCadastro
 import tech.leonam.estockando.viewModel.Produtos
 
 class CadastrarDAO(
     context: Context,
     produto: Produtos
-) {
+) : ContratoCadastro{
     private var helper: Helper
     private val pd = produto
 
@@ -15,7 +16,7 @@ class CadastrarDAO(
         helper = Helper(context)
     }
 
-    fun saveInDatabase() {
+    override fun saveInDatabase() {
         val db = helper.writableDatabase
         val contentValues = ContentValues()
         with(contentValues) {
