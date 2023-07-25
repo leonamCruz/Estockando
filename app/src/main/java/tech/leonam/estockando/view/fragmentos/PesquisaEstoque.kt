@@ -17,10 +17,18 @@ class PesquisaEstoque : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_pesquisa_estoque,container,false)
+        val view = inflater.inflate(R.layout.fragment_pesquisa_estoque, container, false)
         binding = FragmentPesquisaEstoqueBinding.bind(view)
         binding.cardTodosOsProdutos.setOnClickListener {
-            startActivity(Intent(context,RecyclerViewClasse::class.java))
+            val intent = Intent(context, RecyclerViewClasse::class.java)
+            intent.putExtra("opcao", 0)
+            startActivity(intent)
+        }
+        binding.cardPesquisaPorId.setOnClickListener {
+            val intent = Intent(context, RecyclerViewClasse::class.java)
+            intent.putExtra("opcao", 1)
+            intent.putExtra("id",binding.numeroDoIdPesquisa.text.toString())
+            startActivity(intent)
         }
         return view
     }

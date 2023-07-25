@@ -5,4 +5,6 @@ import tech.leonam.estockando.viewModel.Produtos
 interface ContratoPesquisa {
     fun pegaTudo():ArrayList<Produtos>
     fun pegaQntdDeProdutos():Long
+    fun pegaPorId(id: Long):ArrayList<Produtos>
+
 }

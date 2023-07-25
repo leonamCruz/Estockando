@@ -39,7 +39,7 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
                 }
             }
         }
-        Thread{
+        Thread {
             db.close()
         }.start()
         return lista
@@ -49,10 +49,35 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
         val sql = "SELECT COUNT(${Helper.COLUMN_ID}) FROM ${Helper.NOME_TABELA}"
         val rawQuery = db.rawQuery(sql, null)
         val retorno = if (rawQuery.moveToFirst()) rawQuery.getLong(0) else 0
-        Thread{
+        Thread {
             rawQuery.close()
             db.close()
         }.start()
         return retorno
+    }
+
+    override fun pegaPorId(id: Long): ArrayList<Produtos> {
+        val sql = "SELECT * FROM ${Helper.NOME_TABELA} WHERE ID = $id"
+        val rawQuery = db.rawQuery(sql, null)
+        val produtos = Produtos()
+        with(rawQuery) {
+            with(produtos) {
+                with(Helper) {
+                    if (moveToFirst()) {
+                        produtos.id = getLong(COLUMN_ID_POSITION)
+                        nomeDoProduto = getString(COLUMN_NOME_POSITION)
+                        descricaoDoProduto = getString(COLUMN_DESCRICAO_POSITION)
+                        dataCadastro = getString(COLUMN_DATA_CADASTRO_POSITION)
+                        preco = getString(COLUMN_PRECO_POSITION)
+                        codigoDeBarras = getString(COLUMN_CODIGO_BARRAS_POSITION)
+                        imagemDoProduto = getString(COLUMN_IMAGEM_POSITION)
+                        qntDoProduto = getString(COLUMN_QUANTIDADE_POSITION)
+                    }
+                }
+            }
+            val array = ArrayList<Produtos>()
+            array.add(produtos)
+            return array
+        }
     }
 }

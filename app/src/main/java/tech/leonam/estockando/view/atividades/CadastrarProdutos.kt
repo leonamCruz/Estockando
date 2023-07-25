@@ -39,7 +39,7 @@ class CadastrarProdutos : AppCompatActivity(), ContratoCadastro {
     private val REQUEST_IMAGE_CAPTURE = 2
     private val REQUEST_READ_EXTERNAL_STORAGE = 1003
     private val REQUEST_PICK_IMAGE = 1004
-    private var foto: String? = null
+    private lateinit var foto: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -176,7 +176,7 @@ class CadastrarProdutos : AppCompatActivity(), ContratoCadastro {
             try {
                 Thread {
                     val selectedImageUri = data.data
-                    foto = selectedImageUri?.let { getBitmapFromUri(it) }?.let { UtilImage.deBitmapParaBase64(it) }
+                    foto = selectedImageUri?.let { getBitmapFromUri(it) }.let { UtilImage.deBitmapParaBase64(it!!) }
                 }.start()
             } catch (ex: Exception) {
                 val snackbar = Snackbar.make(binding.root, getString(R.string.falha_no_processamento_da_imagem), Snackbar.LENGTH_SHORT)

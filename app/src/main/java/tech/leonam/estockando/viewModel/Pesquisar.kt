@@ -13,4 +13,8 @@ class Pesquisar(context: Context) : ContratoPesquisa {
     override fun pegaQntdDeProdutos(): Long {
         return PesquisaDAO(contexto).pegaQntdDeProdutos()
     }
+
+    override fun pegaPorId(id: Long): ArrayList<Produtos> {
+        return PesquisaDAO(contexto).pegaPorId(id)
+    }
 }

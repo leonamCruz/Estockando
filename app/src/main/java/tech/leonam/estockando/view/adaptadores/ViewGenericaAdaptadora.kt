@@ -23,28 +23,27 @@ class ViewGenericaAdaptadora(
     }
 
     override fun getItemCount(): Int {
-        return if (lista.isEmpty()) 1 else lista.size
+        return if (lista.size == 0) 1 else lista.size
     }
 
     override fun onBindViewHolder(holder: ViewGenerica, position: Int) {
         try {
             val produto = lista[position]
             with(holder.binding) {
-                nomeProduto.text = verificaNull(produto.nomeDoProduto!!)
-                quantidadeProdutos.text = String.format("%s: %s", context.getString(R.string.quantidade), verificaNull(produto.qntDoProduto!!))
-                descricaoProduto.text = verificaNull(produto.descricaoDoProduto!!)
-                quandoFoiCadastrado.text = String.format("%s %s", context.getString(R.string.cadastrado_em), verificaNull(produto.dataCadastro!!).replace(" ", "\n"))
-                precoProduto.text = verificaNull(UtilPreco.normalizaPreco(produto.preco!!))
+                nomeProduto.text = verificaNull(produto.nomeDoProduto)
+                quantidadeProdutos.text = String.format("%s: %s", context.getString(R.string.quantidade), verificaNull(produto.qntDoProduto))
+                descricaoProduto.text = verificaNull(produto.descricaoDoProduto)
+                quandoFoiCadastrado.text = String.format("%s %s", context.getString(R.string.cadastrado_em), verificaNull(produto.dataCadastro).replace(" ", "\n"))
+                precoProduto.text = verificaNull(UtilPreco.normalizaPreco(produto.preco))
                 imagemCabulosa.scaleType = ImageView.ScaleType.CENTER_INSIDE
                 try {
-                    imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto!!))
+                    imagemCabulosa.setImageBitmap(UtilImage.deBase64ParaBitmap(produto.imagemDoProduto))
                 } catch (e: Exception) {
                     imagemCabulosa.setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.boxerro))
                 }
             }
 
-
-        } catch (ex: IndexOutOfBoundsException) {
+        } catch (ex: Exception) {
 
             with(holder.binding) {
                 imagemCabulosa.setImageDrawable(
