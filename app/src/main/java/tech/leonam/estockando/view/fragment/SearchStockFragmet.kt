@@ -18,7 +18,7 @@ class SearchStockFragmet : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_pesquisa_estoque, container, false)
+        val view = inflater.inflate(R.layout.fragment_search_stock, container, false)
         binding = FragmentPesquisaEstoqueBinding.bind(view)
         binding.cardTodosOsProdutos.setOnClickListener {
             val intent = Intent(context, RecyclerViewClasse::class.java)

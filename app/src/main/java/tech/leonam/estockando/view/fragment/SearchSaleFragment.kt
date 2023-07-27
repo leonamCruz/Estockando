@@ -35,7 +35,7 @@ class SearchSaleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pesquisa_vendas, container, false)
+        return inflater.inflate(R.layout.fragment_search_sale, container, false)
     }
 
     companion object {
