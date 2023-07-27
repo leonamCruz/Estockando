@@ -6,18 +6,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
-import tech.leonam.estockando.databinding.ActivityBoasVindasBinding
+import tech.leonam.estockando.databinding.ActivityWelcomeBinding
 import tech.leonam.estockando.viewModel.util.TextoUtility
 
 class WelcomeActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityBoasVindasBinding
+    private lateinit var binding: ActivityWelcomeBinding
     private val KEY_FIRST_TIME: String = "first_time"
     private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         sharedPreferences = getSharedPreferences("a", MODE_PRIVATE)
-        binding = ActivityBoasVindasBinding.inflate(layoutInflater)
+        binding = ActivityWelcomeBinding.inflate(layoutInflater)
 
         if (sharedPreferences.getBoolean(KEY_FIRST_TIME, true)) {
             setContentView(binding.root)

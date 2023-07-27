@@ -3,16 +3,16 @@ package tech.leonam.estockando.view.recyclable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import tech.leonam.estockando.databinding.ActivityReciclavelMostrarTudoBinding
+import tech.leonam.estockando.databinding.ActivityRecyclerViewBinding
 import tech.leonam.estockando.view.adapt.RecyclerViewAdapter
 import tech.leonam.estockando.viewModel.SearchControl
 import tech.leonam.estockando.viewModel.Product
 
 class RecyclerViewClasse : AppCompatActivity() {
-    private lateinit var binding: ActivityReciclavelMostrarTudoBinding
+    private lateinit var binding: ActivityRecyclerViewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityReciclavelMostrarTudoBinding.inflate(layoutInflater)
+        binding = ActivityRecyclerViewBinding.inflate(layoutInflater)
 
         when(intent.extras!!.getInt("opcao")){
             0-> adaptador(SearchControl(baseContext).pegaTudo())

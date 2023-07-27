@@ -8,18 +8,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
-import tech.leonam.estockando.databinding.FragmentPesquisaEstoqueBinding
+import tech.leonam.estockando.databinding.FragmentSearchStockBinding
 import tech.leonam.estockando.view.recyclable.RecyclerViewClasse
 
 class SearchStockFragmet : Fragment() {
-    private lateinit var binding: FragmentPesquisaEstoqueBinding
+    private lateinit var binding: FragmentSearchStockBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_search_stock, container, false)
-        binding = FragmentPesquisaEstoqueBinding.bind(view)
+        binding = FragmentSearchStockBinding.bind(view)
         binding.cardTodosOsProdutos.setOnClickListener {
             val intent = Intent(context, RecyclerViewClasse::class.java)
             intent.putExtra("opcao", 0)

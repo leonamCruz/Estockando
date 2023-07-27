@@ -22,7 +22,7 @@ import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
 import tech.leonam.estockando.R
-import tech.leonam.estockando.databinding.ActivityCadastrarProdutosBinding
+import tech.leonam.estockando.databinding.ActivityRegisterBinding
 import tech.leonam.estockando.model.contract.RegisterInterface
 import tech.leonam.estockando.viewModel.RegisterControl
 import tech.leonam.estockando.viewModel.Product
@@ -32,7 +32,7 @@ import java.util.Locale
 
 @Suppress("DEPRECATION", "OVERRIDE_DEPRECATION")
 class RegisterActivity : AppCompatActivity(), RegisterInterface {
-    private lateinit var binding: ActivityCadastrarProdutosBinding
+    private lateinit var binding: ActivityRegisterBinding
     private lateinit var scannerView: DecoratedBarcodeView
     private val CAMERA_PERMISSION_REQUEST_CODE = 1001
     private val REQUEST_CAMERA_PERMISSION = 1
@@ -43,7 +43,7 @@ class RegisterActivity : AppCompatActivity(), RegisterInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCadastrarProdutosBinding.inflate(layoutInflater)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         scannerView = binding.visualizaoCamera

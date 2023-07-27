@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import tech.leonam.estockando.databinding.ActivityPesquisaBinding
+import tech.leonam.estockando.databinding.ActivitySearchBinding
 import tech.leonam.estockando.view.adapt.SearchFragmentAdapter
 
 class SearchActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityPesquisaBinding
+    private lateinit var binding: ActivitySearchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPesquisaBinding.inflate(layoutInflater)
+        binding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.botaView.adapter = SearchFragmentAdapter(this)
         adicionarTabListener()
