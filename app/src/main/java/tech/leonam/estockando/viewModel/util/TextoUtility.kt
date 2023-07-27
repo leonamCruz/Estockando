@@ -1,6 +1,6 @@
 package tech.leonam.estockando.viewModel.util
 
-class UtilTexto {
+class TextoUtility {
     companion object {
         fun normalizaNome(name: String): String {
             val nome = name.trim().lowercase()

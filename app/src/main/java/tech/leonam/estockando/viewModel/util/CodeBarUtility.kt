@@ -5,7 +5,7 @@ import android.graphics.Color
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.oned.EAN13Writer
 
-class UtilCodeBar {
+class CodeBarUtility {
     companion object {
         fun deTextoParaCodigoDeBarras(numeracao: String): Bitmap {
             if (numeracao.length != 13) {

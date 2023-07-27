@@ -1,4 +1,4 @@
-package tech.leonam.estockando.view.atividades
+package tech.leonam.estockando.view.activity
 
 import android.Manifest
 import android.content.Intent
@@ -23,15 +23,15 @@ import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
 import tech.leonam.estockando.R
 import tech.leonam.estockando.databinding.ActivityCadastrarProdutosBinding
-import tech.leonam.estockando.model.contratos.ContratoCadastro
-import tech.leonam.estockando.viewModel.CadastroController
-import tech.leonam.estockando.viewModel.Produtos
-import tech.leonam.estockando.viewModel.util.UtilImage
+import tech.leonam.estockando.model.contract.RegisterInterface
+import tech.leonam.estockando.viewModel.RegisterControl
+import tech.leonam.estockando.viewModel.Product
+import tech.leonam.estockando.viewModel.util.ImageUtility
 import java.text.SimpleDateFormat
 import java.util.Locale
 
 @Suppress("DEPRECATION", "OVERRIDE_DEPRECATION")
-class CadastrarProdutos : AppCompatActivity(), ContratoCadastro {
+class RegisterActivity : AppCompatActivity(), RegisterInterface {
     private lateinit var binding: ActivityCadastrarProdutosBinding
     private lateinit var scannerView: DecoratedBarcodeView
     private val CAMERA_PERMISSION_REQUEST_CODE = 1001
@@ -162,7 +162,7 @@ class CadastrarProdutos : AppCompatActivity(), ContratoCadastro {
             try {
                 Thread {
                     val imageBitmap = data?.extras?.get("data") as Bitmap
-                    foto = UtilImage.deBitmapParaBase64(imageBitmap)
+                    foto = ImageUtility.deBitmapParaBase64(imageBitmap)
                 }.start()
             } catch (ex: Exception) {
                 val snackbar = Snackbar.make(binding.root, getString(R.string.falha_no_processamento_da_imagem), Snackbar.LENGTH_SHORT)
@@ -176,7 +176,7 @@ class CadastrarProdutos : AppCompatActivity(), ContratoCadastro {
             try {
                 Thread {
                     val selectedImageUri = data.data
-                    foto = selectedImageUri?.let { getBitmapFromUri(it) }.let { UtilImage.deBitmapParaBase64(it!!) }
+                    foto = selectedImageUri?.let { getBitmapFromUri(it) }.let { ImageUtility.deBitmapParaBase64(it!!) }
                 }.start()
             } catch (ex: Exception) {
                 val snackbar = Snackbar.make(binding.root, getString(R.string.falha_no_processamento_da_imagem), Snackbar.LENGTH_SHORT)
@@ -200,15 +200,15 @@ class CadastrarProdutos : AppCompatActivity(), ContratoCadastro {
 
     override fun saveInDatabase() {
         try {
-            val produtos = Produtos()
-            if (binding.nome.text.toString().isNotBlank()) produtos.nomeDoProduto = binding.nome.text.toString()
-            if (binding.descricao.text.toString().isNotBlank()) produtos.descricaoDoProduto = binding.descricao.text.toString()
-            produtos.dataCadastro = pegaDataEHora()
-            if (binding.preco.text.toString().isNotBlank()) produtos.preco = binding.preco.text.toString()
-            if (binding.codigoDeBarras.text.toString().isNotBlank()) produtos.codigoDeBarras = binding.codigoDeBarras.text.toString()
-            if (foto != null) produtos.imagemDoProduto = foto else foto = String()
-            if (binding.quantidade.text.toString().isNotBlank()) produtos.qntDoProduto = binding.quantidade.text.toString()
-            CadastroController( produtos,this).saveInDatabase()
+            val product = Product()
+            if (binding.nome.text.toString().isNotBlank()) product.nomeDoProduto = binding.nome.text.toString()
+            if (binding.descricao.text.toString().isNotBlank()) product.descricaoDoProduto = binding.descricao.text.toString()
+            product.dataCadastro = pegaDataEHora()
+            if (binding.preco.text.toString().isNotBlank()) product.preco = binding.preco.text.toString()
+            if (binding.codigoDeBarras.text.toString().isNotBlank()) product.codigoDeBarras = binding.codigoDeBarras.text.toString()
+            if (foto != null) product.imagemDoProduto = foto else foto = String()
+            if (binding.quantidade.text.toString().isNotBlank()) product.qntDoProduto = binding.quantidade.text.toString()
+            RegisterControl( product,this).saveInDatabase()
 
             val snackbar = Snackbar.make(binding.root, getString(R.string.cadastrado_com_sucesso), Snackbar.LENGTH_SHORT)
             snackbar.setTextColor(getColor(R.color.branco))

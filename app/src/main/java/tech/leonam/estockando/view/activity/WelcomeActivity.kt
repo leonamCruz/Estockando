@@ -1,4 +1,4 @@
-package tech.leonam.estockando.view.atividades
+package tech.leonam.estockando.view.activity
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
 import tech.leonam.estockando.databinding.ActivityBoasVindasBinding
-import tech.leonam.estockando.viewModel.util.UtilTexto
+import tech.leonam.estockando.viewModel.util.TextoUtility
 
-class BoasVindas : AppCompatActivity() {
+class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBoasVindasBinding
     private val KEY_FIRST_TIME: String = "first_time"
     private lateinit var sharedPreferences: SharedPreferences
@@ -50,7 +50,7 @@ class BoasVindas : AppCompatActivity() {
                 val editor = sharedPreferences.edit()
 
                 editor.apply {
-                    val salvar = UtilTexto.normalizaNome(name)
+                    val salvar = TextoUtility.normalizaNome(name)
                     putString("chave",salvar)
                 }.apply()
                 startActivity(Intent(this, MainActivity::class.java))

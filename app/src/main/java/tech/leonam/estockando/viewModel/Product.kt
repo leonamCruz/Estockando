@@ -1,5 +1,5 @@
 package tech.leonam.estockando.viewModel
-class Produtos {
+class Product {
     var id: Long = 0
     lateinit var nomeDoProduto: String
     lateinit var descricaoDoProduto: String

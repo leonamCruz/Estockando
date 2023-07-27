@@ -2,10 +2,10 @@ package tech.leonam.estockando.model.dao
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import tech.leonam.estockando.model.contratos.ContratoPesquisa
-import tech.leonam.estockando.viewModel.Produtos
+import tech.leonam.estockando.model.contract.SearchInterface
+import tech.leonam.estockando.viewModel.Product
 
-class PesquisaDAO(context: Context) : ContratoPesquisa {
+class SearchDao(context: Context) : SearchInterface {
     private val SQL_PEGA_TUDO = "SELECT * FROM ${Helper.NOME_TABELA}"
     private val db: SQLiteDatabase
 
@@ -13,14 +13,14 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
         db = Helper(context).writableDatabase
     }
 
-    override fun pegaTudo(): ArrayList<Produtos> {
+    override fun pegaTudo(): ArrayList<Product> {
         val cursor = db.rawQuery(SQL_PEGA_TUDO, null)
-        val lista = ArrayList<Produtos>()
+        val lista = ArrayList<Product>()
 
         cursor.use {
             if (cursor.moveToFirst()) {
                 while (!cursor.isAfterLast) {
-                    val produto = Produtos()
+                    val produto = Product()
                     with(produto) {
                         with(Helper) {
                             id = cursor.getLong(COLUMN_ID_POSITION)
@@ -56,15 +56,15 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
         return retorno
     }
 
-    override fun pegaPorId(id: Long): ArrayList<Produtos> {
+    override fun pegaPorId(id: Long): ArrayList<Product> {
         val sql = "SELECT * FROM ${Helper.NOME_TABELA} WHERE ID = $id"
         val rawQuery = db.rawQuery(sql, null)
-        val produtos = Produtos()
+        val product = Product()
         with(rawQuery) {
-            with(produtos) {
+            with(product) {
                 with(Helper) {
                     if (moveToFirst()) {
-                        produtos.id = getLong(COLUMN_ID_POSITION)
+                        product.id = getLong(COLUMN_ID_POSITION)
                         nomeDoProduto = getString(COLUMN_NOME_POSITION)
                         descricaoDoProduto = getString(COLUMN_DESCRICAO_POSITION)
                         dataCadastro = getString(COLUMN_DATA_CADASTRO_POSITION)
@@ -75,8 +75,8 @@ class PesquisaDAO(context: Context) : ContratoPesquisa {
                     }
                 }
             }
-            val array = ArrayList<Produtos>()
-            array.add(produtos)
+            val array = ArrayList<Product>()
+            array.add(product)
             return array
         }
     }

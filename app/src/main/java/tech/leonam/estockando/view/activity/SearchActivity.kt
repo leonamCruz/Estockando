@@ -1,4 +1,4 @@
-package tech.leonam.estockando.view.atividades
+package tech.leonam.estockando.view.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -6,15 +6,15 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import tech.leonam.estockando.databinding.ActivityPesquisaBinding
-import tech.leonam.estockando.view.adaptadores.AdaptadorDePaginaPesquisa
+import tech.leonam.estockando.view.adapt.SearchFragmentAdapter
 
-class Pesquisa : AppCompatActivity() {
+class SearchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPesquisaBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPesquisaBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.botaView.adapter = AdaptadorDePaginaPesquisa(this)
+        binding.botaView.adapter = SearchFragmentAdapter(this)
         adicionarTabListener()
         arrastaProLado()
     }

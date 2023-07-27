@@ -1,12 +1,12 @@
-package tech.leonam.estockando.view.reciclaveis
+package tech.leonam.estockando.view.recyclable
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import tech.leonam.estockando.databinding.ActivityReciclavelMostrarTudoBinding
-import tech.leonam.estockando.view.adaptadores.ViewGenericaAdaptadora
-import tech.leonam.estockando.viewModel.Pesquisar
-import tech.leonam.estockando.viewModel.Produtos
+import tech.leonam.estockando.view.adapt.RecyclerViewAdapter
+import tech.leonam.estockando.viewModel.SearchControl
+import tech.leonam.estockando.viewModel.Product
 
 class RecyclerViewClasse : AppCompatActivity() {
     private lateinit var binding: ActivityReciclavelMostrarTudoBinding
@@ -15,17 +15,17 @@ class RecyclerViewClasse : AppCompatActivity() {
         binding = ActivityReciclavelMostrarTudoBinding.inflate(layoutInflater)
 
         when(intent.extras!!.getInt("opcao")){
-            0-> adaptador(Pesquisar(baseContext).pegaTudo())
-            1-> adaptador(Pesquisar(baseContext).pegaPorId(intent.getStringExtra("id")!!.toLong()))
+            0-> adaptador(SearchControl(baseContext).pegaTudo())
+            1-> adaptador(SearchControl(baseContext).pegaPorId(intent.getStringExtra("id")!!.toLong()))
         }
 
 
         setContentView(binding.root)
     }
 
-    private fun adaptador(pesquisa: ArrayList<Produtos>) {
+    private fun adaptador(pesquisa: ArrayList<Product>) {
         with(binding.reciclavel){
-            adapter = ViewGenericaAdaptadora(pesquisa, context)
+            adapter = RecyclerViewAdapter(pesquisa, context)
             layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
             setHasFixedSize(true)
         }

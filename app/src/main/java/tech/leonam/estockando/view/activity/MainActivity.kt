@@ -1,11 +1,11 @@
-package tech.leonam.estockando.view.atividades
+package tech.leonam.estockando.view.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import tech.leonam.estockando.R
 import tech.leonam.estockando.databinding.ActivityMainBinding
-import tech.leonam.estockando.viewModel.Pesquisar
+import tech.leonam.estockando.viewModel.SearchControl
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clickCadastrar() {
         binding.bolaCadastrar.setOnClickListener {
-            startActivity(Intent(this,CadastrarProdutos::class.java))
+            startActivity(Intent(this,RegisterActivity::class.java))
         }
     }
 
@@ -30,12 +30,12 @@ class MainActivity : AppCompatActivity() {
         atualizarInfos()
     }
     private fun atualizarInfos() {
-        binding.textoQntDeProdutos.text = Pesquisar(this).pegaQntdDeProdutos().toString()
+        binding.textoQntDeProdutos.text = SearchControl(this).pegaQntdDeProdutos().toString()
     }
 
     private fun clickPesquisa() {
         binding.cardPesquisa.setOnClickListener {
-            startActivity(Intent(this, Pesquisa::class.java))
+            startActivity(Intent(this, SearchActivity::class.java))
         }
     }
 

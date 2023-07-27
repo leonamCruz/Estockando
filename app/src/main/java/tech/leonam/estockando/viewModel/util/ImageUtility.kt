@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable
 import org.apache.commons.codec.binary.Base64
 import java.io.ByteArrayOutputStream
 
-class UtilImage {
+class ImageUtility {
     companion object {
         fun deBase64ParaBitmap(base64: String): Bitmap {
             val decodedByteArray = Base64.decodeBase64(base64)

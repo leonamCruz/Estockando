@@ -2,13 +2,13 @@ package tech.leonam.estockando.model.dao
 
 import android.content.ContentValues
 import android.content.Context
-import tech.leonam.estockando.model.contratos.ContratoCadastro
-import tech.leonam.estockando.viewModel.Produtos
+import tech.leonam.estockando.model.contract.RegisterInterface
+import tech.leonam.estockando.viewModel.Product
 
-class CadastrarDAO(
+class RegisterDao(
     context: Context,
-    produto: Produtos
-) : ContratoCadastro{
+    produto: Product
+) : RegisterInterface{
     private var helper: Helper
     private val pd = produto
 

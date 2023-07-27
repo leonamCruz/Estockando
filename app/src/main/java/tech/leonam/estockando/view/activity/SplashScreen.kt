@@ -1,4 +1,4 @@
-package tech.leonam.estockando.view.atividades
+package tech.leonam.estockando.view.activity
 
 import android.annotation.SuppressLint
 import android.app.ActivityOptions
@@ -17,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
 
         binding.logoSplash.alpha = 0f
         binding.logoSplash.animate().setDuration(1200).alpha(1f).withEndAction{
-            val intencao = Intent(this,BoasVindas::class.java)
+            val intencao = Intent(this,WelcomeActivity::class.java)
             val options = ActivityOptions.makeCustomAnimation(
                 this,
                 android.R.anim.fade_in,

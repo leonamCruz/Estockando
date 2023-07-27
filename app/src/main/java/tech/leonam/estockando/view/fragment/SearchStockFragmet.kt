@@ -1,4 +1,4 @@
-package tech.leonam.estockando.view.fragmentos
+package tech.leonam.estockando.view.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import tech.leonam.estockando.R
 import tech.leonam.estockando.databinding.FragmentPesquisaEstoqueBinding
-import tech.leonam.estockando.view.reciclaveis.RecyclerViewClasse
+import tech.leonam.estockando.view.recyclable.RecyclerViewClasse
 
-class PesquisaEstoque : Fragment() {
+class SearchStockFragmet : Fragment() {
     private lateinit var binding: FragmentPesquisaEstoqueBinding
     override fun onCreateView(
         inflater: LayoutInflater,
