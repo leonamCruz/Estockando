@@ -31,10 +31,9 @@ class SearchStockFragmet : Fragment() {
         binding.cardPesquisaPorPreO.setOnClickListener {
             val de = binding.de.text.toString()
             val ate = binding.ate.text.toString()
-            val intent = Intent(context, RecyclerViewClasse::class.java)
-            intent.putExtra("opcao", 2)
-
             if (de.isNotBlank() || ate.isNotBlank()) {
+                val intent = Intent(context, RecyclerViewClasse::class.java)
+                intent.putExtra("opcao", 2)
                 intent.putExtra("de", de)
                 intent.putExtra("ate", ate)
                 startActivity(intent)

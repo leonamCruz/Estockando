@@ -3,6 +3,7 @@ package tech.leonam.estockando.model.dao
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import tech.leonam.estockando.model.contract.SearchInterface
+import tech.leonam.estockando.model.dao.Helper.Companion.COLUMN_PRECO
 import tech.leonam.estockando.viewModel.Product
 import java.math.BigDecimal
 
@@ -83,6 +84,36 @@ class SearchDao(context: Context) : SearchInterface {
     }
 
     override fun pegaPorPreco(de: BigDecimal, ate: BigDecimal): ArrayList<Product> {
-        TODO("Not yet implemented")
+        val lista = ArrayList<Product>()
+        val query = "SELECT * FROM ${Helper.NOME_TABELA} WHERE CAST($COLUMN_PRECO AS DECIMAL(10, 2)) BETWEEN ${de.toDouble()} AND ${ate.toDouble()} ORDER BY CAST($COLUMN_PRECO AS DECIMAL(10, 2)) ASC"
+
+
+        val rawQuery = db.rawQuery(query, null)
+
+        rawQuery.use {
+            if (rawQuery.moveToFirst()) {
+                while (!rawQuery.isAfterLast) {
+                    val produto = Product()
+                    with(produto) {
+                        with(Helper) {
+                            id = rawQuery.getLong(COLUMN_ID_POSITION)
+                            nomeDoProduto = rawQuery.getString(COLUMN_NOME_POSITION)
+                            descricaoDoProduto = rawQuery.getString(COLUMN_DESCRICAO_POSITION)
+                            dataCadastro = rawQuery.getString(COLUMN_DATA_CADASTRO_POSITION)
+                            preco = rawQuery.getString(COLUMN_PRECO_POSITION)
+                            codigoDeBarras = rawQuery.getString(COLUMN_CODIGO_BARRAS_POSITION)
+                            imagemDoProduto = rawQuery.getString(COLUMN_IMAGEM_POSITION)
+                            qntDoProduto = rawQuery.getString(COLUMN_QUANTIDADE_POSITION)
+                        }
+                    }
+                    lista.add(produto)
+                    rawQuery.moveToNext()
+                }
+            }
+        }
+        Thread {
+            db.close()
+        }.start()
+        return lista
     }
 }
