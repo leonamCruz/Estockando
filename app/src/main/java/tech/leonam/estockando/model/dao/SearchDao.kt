@@ -4,6 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import tech.leonam.estockando.model.contract.SearchInterface
 import tech.leonam.estockando.viewModel.Product
+import java.math.BigDecimal
 
 class SearchDao(context: Context) : SearchInterface {
     private val SQL_PEGA_TUDO = "SELECT * FROM ${Helper.NOME_TABELA}"
@@ -79,5 +80,9 @@ class SearchDao(context: Context) : SearchInterface {
             array.add(product)
             return array
         }
+    }
+
+    override fun pegaPorPreco(de: BigDecimal, ate: BigDecimal): ArrayList<Product> {
+        TODO("Not yet implemented")
     }
 }

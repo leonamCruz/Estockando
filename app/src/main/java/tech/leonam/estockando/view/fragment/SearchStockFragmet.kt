@@ -20,16 +20,43 @@ class SearchStockFragmet : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_search_stock, container, false)
         binding = FragmentSearchStockBinding.bind(view)
-        binding.cardTodosOsProdutos.setOnClickListener {
+        clickTodosOsProdutos(binding)
+        clickPesquisaPorId(binding)
+        clickPesquisaPorPreco(binding)
+
+        return view
+    }
+
+    private fun clickPesquisaPorPreco(binding: FragmentSearchStockBinding) {
+        binding.cardPesquisaPorPreO.setOnClickListener {
+            val de = binding.de.text.toString()
+            val ate = binding.ate.text.toString()
             val intent = Intent(context, RecyclerViewClasse::class.java)
-            intent.putExtra("opcao", 0)
-            startActivity(intent)
+            intent.putExtra("opcao", 2)
+
+            if (de.isNotBlank() || ate.isNotBlank()) {
+                intent.putExtra("de", de)
+                intent.putExtra("ate", ate)
+                startActivity(intent)
+            } else {
+                val snackbar = Snackbar.make(
+                    binding.root, getString(R.string.verifique_os_valores),
+                    Snackbar.LENGTH_SHORT
+                )
+                snackbar.setTextColor(requireContext().getColor(R.color.branco))
+                snackbar.setBackgroundTint(requireContext().getColor(R.color.preto))
+                snackbar.show()
+            }
         }
+    }
+
+    private fun clickPesquisaPorId(binding: FragmentSearchStockBinding) {
         binding.cardPesquisaPorId.setOnClickListener {
-            val intent = Intent(context, RecyclerViewClasse::class.java)
-            intent.putExtra("opcao", 1)
             val id = binding.numeroDoIdPesquisa.text.toString()
+
             if (id.isNotBlank()) {
+                val intent = Intent(context, RecyclerViewClasse::class.java)
+                intent.putExtra("opcao", 1)
                 intent.putExtra("id", id)
                 startActivity(intent)
             } else {
@@ -43,6 +70,13 @@ class SearchStockFragmet : Fragment() {
                 snackbar.show()
             }
         }
-        return view
+    }
+
+    private fun clickTodosOsProdutos(binding: FragmentSearchStockBinding) {
+        binding.cardTodosOsProdutos.setOnClickListener {
+            val intent = Intent(context, RecyclerViewClasse::class.java)
+            intent.putExtra("opcao", 0)
+            startActivity(intent)
+        }
     }
 }

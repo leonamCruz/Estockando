@@ -44,4 +44,5 @@
     <string name="cadastrado_com_sucesso">Cadastrado Com Sucesso</string>
     <string name="cadastrado_em">Cadastrado em:</string>
     <string name="insira_um_valor">Insira um valor</string>
+    <string name="verifique_os_valores">Verifique os valores.</string>
 </resources>
