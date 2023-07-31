@@ -3,8 +3,10 @@ package tech.leonam.estockando.viewModel
 import android.content.Context
 import tech.leonam.estockando.model.contract.SearchInterface
 import tech.leonam.estockando.model.dao.SearchDao
+import tech.leonam.estockando.viewModel.util.PadronizaPreco
 import java.math.BigDecimal
-
+const val DE = 0
+const val ATE = 1
 class SearchControl(context: Context) : SearchInterface {
     private val contexto = context
     override fun pegaTudo(): ArrayList<Product> {
@@ -20,6 +22,7 @@ class SearchControl(context: Context) : SearchInterface {
     }
 
     override fun pegaPorPreco(de: BigDecimal, ate: BigDecimal): ArrayList<Product> {
-        TODO("Not yet implemented")
+        val padronizado = PadronizaPreco.padronizar(de,ate)
+        return SearchDao(contexto).pegaPorPreco(padronizado[DE],padronizado[ATE])
     }
 }
