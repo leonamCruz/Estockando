@@ -32,7 +32,7 @@ class RecyclerViewAdapter(
             with(holder.binding) {
                 nomeProduto.text = verificaNull(produto.nomeDoProduto)
                 quantidadeProdutos.text = String.format("%s: %s", context.getString(R.string.quantidade), verificaNull(produto.qntDoProduto))
-                descricaoProduto.text = verificaNull(produto.descricaoDoProduto)
+                descricaoProduto.text = verificaNull(produto.descricaoDoProduto + "\n Id: ${produto.id}")
                 quandoFoiCadastrado.text = String.format("%s %s", context.getString(R.string.cadastrado_em), verificaNull(produto.dataCadastro).replace(" ", "\n"))
                 precoProduto.text = verificaNull(PriceUtility.normalizaPreco(produto.preco))
                 imagemCabulosa.scaleType = ImageView.ScaleType.CENTER_INSIDE

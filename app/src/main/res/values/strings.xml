@@ -45,4 +45,6 @@
     <string name="cadastrado_em">Cadastrado em:</string>
     <string name="insira_um_valor">Insira um valor</string>
     <string name="verifique_os_valores">Verifique os valores.</string>
+    <string name="modificar">Modificar</string>
+    <string name="excluir">Excluir</string>
 </resources>

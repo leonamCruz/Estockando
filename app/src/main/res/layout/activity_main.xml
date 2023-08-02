@@ -51,9 +51,9 @@
             android:layout_width="100sp"
             android:layout_height="match_parent"
             android:gravity="center"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintEnd_toStartOf="@id/layoutGanhos"
             android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/layoutGanhos"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
@@ -103,28 +103,26 @@
             android:id="@+id/layoutProdutoMaisVendido"
             android:layout_width="100sp"
             android:layout_height="match_parent"
-            app:layout_constraintStart_toEndOf="@id/layoutGanhos"
+            android:gravity="center"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            android:gravity="center"
-            >
+            app:layout_constraintStart_toEndOf="@id/layoutGanhos">
 
             <ImageView
                 android:layout_width="55sp"
                 android:layout_height="55sp"
-                app:srcCompat = "@drawable/champion"
                 android:layout_gravity="center"
-                android:importantForAccessibility="no" />
+                android:importantForAccessibility="no"
+                app:srcCompat="@drawable/champion" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="@string/mais_vendido_picles"
                 android:textColor="@color/preto"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:textSize="14sp"
-                />
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -181,14 +179,16 @@
         android:id="@+id/cardPesquisa"
         android:layout_width="125sp"
         android:layout_height="125sp"
-        app:layout_constraintBottom_toTopOf="@id/bolaVender"
+        android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8sp"
         android:orientation="vertical"
         app:cardCornerRadius="20sp"
+        app:layout_constraintBottom_toTopOf="@id/cardAlterar"
         app:layout_constraintEnd_toStartOf="@id/cardRelatorio"
         app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginEnd="8sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/retanguloSuperior">
+        app:layout_constraintTop_toBottomOf="@id/retanguloSuperior"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -242,15 +242,15 @@
 
             <ImageView
                 android:id="@+id/relatarImage"
-                android:layout_width="65sp"
-                android:layout_height="65sp"
+                android:layout_width="68dp"
+                android:layout_height="63dp"
+                android:importantForAccessibility="no"
                 app:layout_constraintBottom_toTopOf="@id/textoRelatar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed"
-                app:srcCompat="@drawable/relatar"
-                android:importantForAccessibility="no" />
+                app:srcCompat="@drawable/relatar" />
 
             <TextView
                 android:id="@+id/textoRelatar"
@@ -265,4 +265,85 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAlterar"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        android:layout_marginEnd="8sp"
+        android:orientation="vertical"
+        app:cardCornerRadius="20sp"
+        app:layout_constraintBottom_toTopOf="@id/bolaVender"
+        app:layout_constraintEnd_toStartOf="@id/cardDeletar"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardPesquisa">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/alterarImage"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toTopOf="@id/textoAlterar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/alterar" />
+
+            <TextView
+                android:id="@+id/textoAlterar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/modificar"
+                android:textColor="@color/branco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/alterarImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDeletar"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+
+        android:orientation="vertical"
+        app:cardCornerRadius="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cardAlterar"
+        app:layout_constraintTop_toTopOf="@id/cardAlterar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/excluirImage"
+                android:layout_width="65sp"
+                android:layout_height="65sp"
+                android:importantForAccessibility="no"
+                app:layout_constraintBottom_toTopOf="@id/textoExcluir"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:srcCompat="@drawable/delete" />
+
+            <TextView
+                android:id="@+id/textoExcluir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/excluir"
+                android:textColor="@color/branco"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/excluirImage" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
